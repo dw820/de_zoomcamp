@@ -9,13 +9,22 @@ services:
       - "./ny_taxi_postgres_data:/var/lib/postgresql/data"
     ports:
       - "5432:5432"
-  pgadmin:
-    image: dpage/pgadmin4
-    environment:
-      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
-      - PGADMIN_DEFAULT_PASSWORD=root
-    ports:
-      - "8080:80"
+  # pgadmin:
+  #   image: dpage/pgadmin4
+  #   environment:
+  #     - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+  #     - PGADMIN_DEFAULT_PASSWORD=root
+  #   ports:
+  #     - "8080:80"
+  python:
+    depends_on:
+      - "pgdatabase"
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports: 
+      - "8000:8000"
+    
 
 # By default Compose sets up a single network for your app. 
 # Each container for a service joins the default network
