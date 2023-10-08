@@ -11,3 +11,11 @@
    - Password: root
 
 7. 
+
+
+
+## GCP
+# Connect to GCP locally through SSH
+1. Run `ssh-keygen -t rsa -f ~/.ssh/ssh-key-1 -C weitu -b 2048` to generate public/private key
+2. Add ssh key to the instance
+3. Run `ssh -i ~/.ssh/ssh-key-1 weitu@104.154.142.8` to connect to the intance

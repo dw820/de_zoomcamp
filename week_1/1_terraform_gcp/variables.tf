@@ -14,7 +14,7 @@ variable "project" {
 
 variable "region" {
   description = "Region for GCP resources. Choose as per your location: https://cloud.google.com/about/locations"
-  default     = "us-west1"
+  default     = "us-central1"
   type        = string
 }
 
